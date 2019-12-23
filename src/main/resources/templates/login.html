@@ -33,7 +33,7 @@
         <div class="holder">
             <table class="login_table">
                 <tr>
-                    <td><label for="id_username">Username:</label></td>
+                    <td><label for="id_username">e-mail:</label></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="username" id="id_username" required autofocus></td>
@@ -43,6 +43,9 @@
                 </tr>
                 <tr>
                     <td><input type="password" name="password" id="id_password" required></td>
+                </tr>
+                <tr>
+                    <td><span th:text="${backend_error}" class="error"></span></td>
                 </tr>
             </table>
             <br>
