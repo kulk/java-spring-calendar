@@ -1,11 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <title>Birthday Calendar</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Calendar</h1>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        Calendar
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
 
+        <a class="p-2 text-dark" href="/">Calendar</a>
+        <a class="p-2 text-dark" href="/label/">Labels</a>
+        <a class="p-2 text-dark" href="/accounts/logout/">Logout</a>
+
+
+    </nav>
+</div>
+
+<div class="bd-example-container-body">
+
+
+    <h5>New Event</h5>
+    <form method="POST"><input type="hidden" name="csrfmiddlewaretoken"
+                               value="XufgbcBypdwnaEEleu1KDLwtJQDUYq5aespOz1u7yQDoDLaJHCaT1Oot4PkCDWJ9">
+        <table border="0">
+            <tr>
+                <th><label for="id_name">Name:</label></th>
+                <td><input type="text" name="name" id="id_name" required maxlength="25"></td>
+            </tr>
+            <tr>
+                <th><label for="id_day">Day:</label></th>
+                <td><input type="text" name="day" id="id_day" required></td>
+            </tr>
+            <tr>
+                <th><label for="id_label">Label:</label></th>
+                <td><select name="label" id="id_label">
+                    <option value="" selected>---------</option>
+
+                    <option value="4">kulk label 2</option>
+
+                    <option value="5">gomez label 2</option>
+
+                    <option value="6">verjaardag</option>
+
+                </select></td>
+            </tr>
+        </table>
+        <button class="submitButton" type="submit">Submit</button>
+    </form>
+    <br>
+    <table id="calendar">
+        <tr>
+            <th>January</th>
+            <th>February</th>
+            <th>March</th>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <p>
+                    <!--<span th:each="event : ${events}" ></span>
+                    <b><span th:text="${event.name}" /></b>
+                    <span th:text="${event.date}" />-->
+                    <!--<b>Ruben jarig</b> -
+                    18 Feb 2014
+                    - verjaardag
+                    <a class="delete" href="/delete_birthday/19"><img src="img/bin_icon.png" width="18"
+                                                                      height="18"></a>-->
+                </p>
+
+            </td>
+            <td>
+            </td>
+
+        </tr>
+        <tr>
+            <th>April</th>
+            <th>May</th>
+            <th>June</th>
+        </tr>
+        <tr>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+        </tr>
+        <tr>
+            <th>July</th>
+            <th>August</th>
+            <th>September</th>
+        </tr>
+        <tr>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+        </tr>
+        <tr>
+            <th>October</th>
+            <th>November</th>
+            <th>December</th>
+        </tr>
+        <tr>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+            <td>
+
+
+            </td>
+        </tr>
+    </table>
+
+</div>
 </body>
 </html>

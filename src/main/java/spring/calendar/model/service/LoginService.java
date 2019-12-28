@@ -19,4 +19,9 @@ public class LoginService {
         return false;
     }
 
+    public User getUserByEmail(String email){
+        User user = userDao.findUserByEmail(email);
+        return user;
+    }
+
 }

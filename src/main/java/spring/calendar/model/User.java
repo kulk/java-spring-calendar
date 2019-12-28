@@ -38,6 +38,10 @@ public class User {
     }
 
     //Getters & setters
+    public int getUserId() {
+        return userId;
+    }
+
     public String getEmail() {
         return email;
     }
