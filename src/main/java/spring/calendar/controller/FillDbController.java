@@ -9,9 +9,14 @@ import spring.calendar.model.Dao.UserDao;
 import spring.calendar.model.Event;
 import spring.calendar.model.Label;
 import spring.calendar.model.User;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 
 @Controller
@@ -39,6 +44,7 @@ public class FillDbController {
         userDao.save(user1);
         userDao.save(user2);
         eventDao.save(event1);
+        loadTestEvents(user1);
     }
     //Todo: Hier verder: user_events tabel is leeg
 
@@ -53,4 +59,22 @@ public class FillDbController {
         }
         return labels;
     }
+
+    private void loadTestEvents(User user){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        try{
+            Scanner input = new Scanner(new File("../spring-calendar/src/main/resources/static/testdata/testevents.csv"));
+            while(input.hasNextLine()){
+                String row = input.nextLine();
+                String[] rowArray = row.split(",");
+                LocalDate date = LocalDate.parse(rowArray[0], formatter);
+                Event event = new Event(rowArray[1], date);
+                eventDao.save(event);
+                user.addEvent(event);
+            }
+        } catch (FileNotFoundException notFound){
+            System.out.println("File not found");
+        }
+    }
+
 }
