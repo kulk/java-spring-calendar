@@ -36,6 +36,10 @@ public class Event {
     }
 
     //Getters & setters
+    public int getEventId() {
+        return eventId;
+    }
+
     public String getName() {
         return name;
     }

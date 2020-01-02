@@ -20,17 +20,9 @@ public class CalendarController {
 
 
     @GetMapping("calendar")
-    //public String calendarLauncher(@SessionAttribute("user") User user, Model model){
-    public String calendarLauncher(Model model){
-        User user = loginService.getUserByEmail("roeland@gmail.com");
-        User user2 = loginService.getUserByEmail("mike@gmail.com");
-        ArrayList<User> users = new ArrayList<>();
-        users.add(user);
-        users.add(user2);
-        System.out.println(users.get(0).getEmail());
-        System.out.println(users.get(1).getEmail());
-
-        model.addAttribute("users", users);
-        return "test";
+    public String calendarLauncher(@SessionAttribute("user") User user, Model model){
+        List<Event> events = user.getEvents();
+        model.addAttribute("events", events);
+        return "calendar";
     }
 }

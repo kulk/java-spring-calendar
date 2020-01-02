@@ -1,5 +1,3 @@
-
-
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Birthday Calendar</title>
@@ -72,21 +70,23 @@
             <td>
                 <p>
 
+                <table>
+                    <tr th:each="event : ${events}" class="inner_table">
+                        <td th:text="${event.name}"></td>
+                        <td th:text="${event.date}"></td>
+                        <td>
+                            <a th:href="@{/delete_event(id=${event.eventId})}">
+                                <img src="img/bin_icon.png" width="18" height="18">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
 
-                    <span th:each="user : ${users}" />
-                    <span th:text="${user.email}"></span>
-
-                   <!--
-                   <span th:each="event : ${events}" />
-                   <span th:text="${event.name}" />-->
-
-                    <!--<span th:text="${event.date}" />-->
-                    <!--<b>Ruben jarig</b> -
-                    18 Feb 2014
-                    - verjaardag
-                    <a class="delete" href="/delete_birthday/19"><img src="img/bin_icon.png" width="18"
-                                                                      height="18"></a>-->
-                </p>
+                <!--<b>Ruben jarig</b> -
+                18 Feb 2014
+                - verjaardag
+                <a class="delete" href="/delete_birthday/19">
+                    </p>-->
 
             </td>
             <td>

@@ -1,3 +1,8 @@
+.inner_table table td{
+	/*border: none !important;*/
+	border: solid red 1px !important;
+}
+
 .error{
 	color:red;
 }
@@ -19,6 +24,7 @@
 #calendar th{
 	background-color: #f2f2f2;
 }
+
 #formBox{
 	margin:auto;
 	width: 60%;
