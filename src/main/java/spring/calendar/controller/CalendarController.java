@@ -31,6 +31,17 @@ public class CalendarController {
         testEvents.add(events.get(3));
         HashMap<String, ArrayList<Event>> eventMap = createEventMap(testEvents);
         model.addAttribute("testEvents", eventMap);
+
+        /*ArrayList<Event> testList01 = eventMap.get("01");
+        for (Event x : testList01){
+            System.out.println("DEBUG: " + x.getName());
+        }*/
+        /** Test with HashMpay**/
+        HashMap<String, String> testMap = new HashMap<>();
+        testMap.put("test1", "Ruben");
+        testMap.put("test2", "Milena");
+        model.addAttribute("testMap", testMap);
+        /** End **/
         return "calendar";
     }
 
@@ -39,9 +50,10 @@ public class CalendarController {
         ArrayList<Event> events1 = new ArrayList<>();
         ArrayList<Event> events2 = new ArrayList<>();
         for (int i = 0; i < events.size() ; i++) {
-            if(i % 1 == 0){
+            if(i % 2 == 0){
                 events1.add(events.get(i));
             } else {
+                System.out.println("DEBUG: events2.add()");
                 events2.add(events.get(i));
             }
         }

@@ -71,6 +71,7 @@
                 <p>
 
                     <!--<table>
+                    &lt;!&ndash; Working example with List &ndash;&gt;
                         <tr th:each="event : ${events}" class="inner_table">
                             <td th:text="${event.name}"></td>
                             <td th:text="${event.date}"></td>
@@ -81,46 +82,34 @@
                             </td>
                         </tr>
                     </table>-->
+
+
+                    <!--http://forum.thymeleaf.org/Working-with-Hashmaps-and-complex-objects-as-keys-td4026914.html-->
+
                     <!--<table>
-                        <tr th:each="testEvent : ${testEvents}">
-                            <td th:text="${testEvent.key}">keyvalue</td>
-                            <table>
-                                <tr th:each="01 : ${testEvent.value}">
-                                    <td th:text="${01.name}">Some name</td>
-                                    <td th:text="${01.date}">Some name</td>
-                                </tr>
-                            </table>
-                        </tr>
-                    </table>-->
+                    &lt;!&ndash; Working example with Map &ndash;&gt;
 
-                <!--<table>
+                        <th:block  th:each="state : ${testEvents}">
 
-                    <tr th:each="state : ${testEvents}">
-
-                            <th:block th:each="district : ${state.value}">
+                            <tr th:each="district : ${state.value}">
                                 <td th:text="${district.name}">District</td>
-                            </th:block>
-                        </tr>
+                            </tr>
+                        </th:block >
 
-                </table>-->
-
+                    </table>-->
                 <table>
-
-                    <th:block  th:each="state : ${testEvents}">
-
-                        <tr th:each="district : ${state.value}">
-                            <td th:text="${district.name}">District</td>
-                        </tr>
-                    </th:block >
-
-                </table>
-
-                <!--<table>
-                    <tr th:each="instance : ${testEvents}">
-                        <td th:text="${instance.key}">keyvalue</td>
-                        &lt;!&ndash;<td th:text="${instance.value.numOfData}">num</td>&ndash;&gt;
+                    <tr th:each="event : ${testEvents.get('01')}" class="inner_table">
+                        <td th:text="${event.name}"></td>
+                        <td th:text="${event.date}"></td>
+                        <td>
+                            <a th:href="@{/delete_event(id=${event.eventId})}">
+                                <img src="img/bin_icon.png" width="18" height="18">
+                            </a>
+                        </td>
                     </tr>
-                </table>-->
+                </table>
+                <!--<span th:text="${testMap.get('test2')}">YEAH!</span>-->
+
 
                 <!--<b>Ruben jarig</b> -
                 18 Feb 2014
