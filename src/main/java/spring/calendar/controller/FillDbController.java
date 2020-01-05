@@ -46,7 +46,6 @@ public class FillDbController {
         eventDao.save(event1);
         loadTestEvents(user1);
     }
-    //Todo: Hier verder: user_events tabel is leeg
 
     private ArrayList<Label> createLabels(){
         ArrayList<Label> labels = new ArrayList<>();
