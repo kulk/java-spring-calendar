@@ -36,27 +36,34 @@ public class CalendarController {
 
     public HashMap<String, ArrayList<Event>> createEventMap(List<Event> events){
         HashMap<String, ArrayList<Event>> eventMap = new HashMap<>();
+        String month = "";
 //        * - Loop trough events List
         for(Event event : events){
 //        * - Look up month of event
-            String month = extractKey(event);
+            month = extractKey(event);
+            if(eventMap.containsKey(month)){
+                ArrayList<Event> eventList = eventMap.get(month);
+                eventList.add(event);
+                eventMap.put(month, eventList);
+            } else {
+                ArrayList<Event> eventList = new ArrayList<>();
+                eventList.add(event);
+                eventMap.put(month, eventList);
+            }
         }
-
 //        * - Create key String if needed
 //        * - Create value List if needed
 //        * - Add Event to the value List
-
         return  eventMap;
     }
+    /*public ArrayList<Event> addEventToList(ArrayList<Event> eventList){
+
+    }*/
 
     public String extractKey(Event event){
         LocalDate date = event.getDate();
-        //String stringDate = date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
         String stringDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        System.out.println(event.getName() + " " + stringDate);
         String month = String.valueOf(stringDate.charAt(3)) + stringDate.charAt(4);
-        //System.out.println(month);
-
-        return "";
+        return month;
     }
 }
