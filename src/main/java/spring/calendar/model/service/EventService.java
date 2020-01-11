@@ -22,7 +22,7 @@ public class EventService {
         eventDao.save(event);
     }
 
-    public HashMap<String, ArrayList<Event>> createEventMap(User user){
+    public HashMap<String, ArrayList<Event>> getEventMap(User user){
         List<Event> events = user.getEvents();
         HashMap<String, ArrayList<Event>> eventMap = new HashMap<>();
         for(Event event : events){

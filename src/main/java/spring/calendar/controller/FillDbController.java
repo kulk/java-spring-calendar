@@ -39,6 +39,7 @@ public class FillDbController {
         User user1 = new User("roeland@gmail.com", "123");
         User user2 = new User("mike@gmail.com", "123");
         ArrayList<Label> labels = createLabels();
+        user1.setLabels(labels);
         Event event1 = new Event("Mike's birthday", LocalDate.now(), labels.get(1));
         user1.addEvent(event1);
         userDao.save(user1);

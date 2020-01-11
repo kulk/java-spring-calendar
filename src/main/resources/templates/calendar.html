@@ -26,7 +26,7 @@
 <div class="bd-example-container-body">
 
 
-    <h5>New Event</h5>
+    <h5>Create new event</h5>
     <form method="POST"><input type="hidden" name="csrfmiddlewaretoken"
                                value="XufgbcBypdwnaEEleu1KDLwtJQDUYq5aespOz1u7yQDoDLaJHCaT1Oot4PkCDWJ9">
         <table border="0">
@@ -40,16 +40,30 @@
             </tr>
             <tr>
                 <th><label for="id_label">Label:</label></th>
-                <td><select name="label" id="id_label">
-                    <option value="" selected>---------</option>
+                <td>
 
-                    <option value="4">kulk label 2</option>
+                    <!--<table>
+                        <tr th:each="label : ${labels}">
+                            <td th:text="${label.labelName}"></td>
+                        </tr>
+                    </table>-->
+                    <select name="label" id="id_label">
+                        <option>Select</option>
+                        <option th:each="label : ${labels}" th:text="${label.labelName}" />
+                    </select>
 
-                    <option value="5">gomez label 2</option>
 
-                    <option value="6">verjaardag</option>
+                    <!--<select name="label" id="id_label">
+                        <option value="" selected>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>
 
-                </select></td>
+                        <option value="4">kulk label 2</option>
+
+                        <option value="5">gomez label 2</option>
+
+                        <option value="6">verjaardag</option>
+
+                    </select>-->
+                </td>
             </tr>
         </table>
         <button class="submitButton" type="submit">Submit</button>
