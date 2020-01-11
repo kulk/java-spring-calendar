@@ -50,5 +50,5 @@ public class EventService {
         String stringDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         return String.valueOf(stringDate.charAt(3)) + stringDate.charAt(4);
     }
-    
+
 }
