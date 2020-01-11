@@ -49,7 +49,7 @@
                     </table>-->
                     <select name="label" id="id_label">
                         <option>Select</option>
-                        <option th:each="label : ${labels}" th:text="${label.labelName}" />
+                        <option th:each="label : ${labels}" th:text="${label.labelName}"th:value="${label.labelId}"/>
                     </select>
 
 

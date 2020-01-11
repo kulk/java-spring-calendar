@@ -29,6 +29,9 @@ public class CalendarController {
     public String calendarHandler(@SessionAttribute("user") User user, Model model){
         HashMap<String, ArrayList<Event>> eventMap = eventService.getEventMap(user);
         List<Label> labels = user.getLabels();
+        /*for(Label l : labels){
+            System.out.println(l.get);
+        }*/
         model.addAttribute("testEvents", eventMap);
         model.addAttribute("labels", labels);
         return "calendar";

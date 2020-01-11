@@ -26,6 +26,10 @@ public class Label {
     }
 
     //Getters & setters
+    public int getLabelId() {
+        return labelId;
+    }
+
     public String getLabelName() {
         return labelName;
     }
