@@ -6,4 +6,9 @@ import spring.calendar.model.Event;
 
 @Repository
 public interface EventDao extends JpaRepository<Event, Integer> {
+
+    /*void deleteByEventId(int eventId);*/
+
+    Event findEventByEventId(int eventId);
+
 }

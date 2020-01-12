@@ -27,6 +27,16 @@ public class EventService {
         eventDao.save(event);
     }
 
+    public Event findEventByEventId(int eventId){
+        return eventDao.findEventByEventId(eventId);
+
+    }
+
+    public void delete(Event event){
+        eventDao.delete(event);
+    }
+
+
     public Event createEvent(String eventName, String date, String labelString){
         LocalDate eventDate = LocalDate.parse(date);
         Label label = labelDao.findLabelByLabelId(Integer.parseInt(labelString));

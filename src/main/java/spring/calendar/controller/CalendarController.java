@@ -52,6 +52,16 @@ public class CalendarController {
         return "redirect:/calendar";
     }
 
+    @GetMapping("delete_event")
+    public String deleteEventHandler(@SessionAttribute("user") User user,
+                                     @RequestParam (value = "id", required = false) int eventId){
+        // Remove event from User
+        Event event = eventService.findEventByEventId(eventId);
+        System.out.println("Delete event" +eventId);
+        eventService.delete(event);
+        return "redirect:/calendar";
+    }
+
 
 
 
