@@ -7,4 +7,6 @@ import spring.calendar.model.Label;
 
 @Repository
 public interface LabelDao extends JpaRepository<Label, Integer> {
+
+    Label findLabelByLabelId(int labelId);
 }

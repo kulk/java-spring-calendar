@@ -12,7 +12,7 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int eventId;
     private String name;
-    private LocalDate date;
+    private LocalDate eventDate;
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Label> labels = new ArrayList<>();
 
@@ -20,15 +20,15 @@ public class Event {
         super();
     }
 
-    public Event(String name, LocalDate date, Label label){
+    public Event(String name, LocalDate eventDate, Label label){
         this.name = name;
-        this.date = date;
+        this.eventDate = eventDate;
         this.labels.add(label);
     }
 
-    public Event(String name, LocalDate date){
+    public Event(String name, LocalDate eventDate){
         this.name = name;
-        this.date = date;
+        this.eventDate = eventDate;
     }
 
     public void addLabel(Label label){
@@ -48,12 +48,12 @@ public class Event {
         this.name = name;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getEventDate() {
+        return eventDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setEventDate(LocalDate date) {
+        this.eventDate = date;
     }
 
     public List<Label> getLabels() {
