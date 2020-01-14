@@ -13,7 +13,7 @@ public class Event {
     private int eventId;
     private String name;
     private LocalDate eventDate;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Label> labels = new ArrayList<>();
 
     public Event() {
@@ -24,6 +24,12 @@ public class Event {
         this.name = name;
         this.eventDate = eventDate;
         this.labels.add(label);
+    }
+
+    public Event(String name, LocalDate eventDate, List<Label> labels){
+        this.name = name;
+        this.eventDate = eventDate;
+        this.labels = labels;
     }
 
     public Event(String name, LocalDate eventDate){

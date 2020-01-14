@@ -1,7 +1,6 @@
-.inner_table table td{
-	/*border: none !important;*/
+/*.inner_table table td{
 	border: solid red 1px !important;
-}
+}*/
 
 .error{
 	color:red;
@@ -23,6 +22,38 @@
 }
 #calendar th{
 	background-color: #f2f2f2;
+}
+
+/*table table{
+	border-collapse: collapse;
+
+}
+table table td{
+	border:none;
+
+}*/
+.event-item {
+	padding-bottom: 10px;
+}
+.event-item div{
+	display: inline;
+}
+
+.event-item {
+	padding-bottom: 10px;
+}
+/*.event-item span{
+	display: inline;
+	padding-right: 10px;
+}*/
+
+.event-item span {
+	color:white;
+	margin-right:5px;
+	padding: 3px;
+	background-color:grey;
+	font-size:12px;
+	border-radius: 5px;
 }
 
 #formBox{

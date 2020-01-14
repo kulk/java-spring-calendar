@@ -12,6 +12,7 @@ public class Label {
     private int labelId;
     private String labelName;
     @ManyToMany(mappedBy = "labels",cascade = CascadeType.ALL)
+    //@ManyToMany(mappedBy = "labels")
     private List<Event> events = new ArrayList<>();
 
     public Label() {

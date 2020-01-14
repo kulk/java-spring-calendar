@@ -14,14 +14,11 @@ import spring.calendar.model.service.EventService;
 import spring.calendar.model.service.LabelService;
 import spring.calendar.model.service.UserService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
 public class CalendarController {
-
 
     @Autowired
     EventService eventService;
@@ -57,7 +54,10 @@ public class CalendarController {
                                      @RequestParam (value = "id", required = false) int eventId){
         // Remove event from User
         Event event = eventService.findEventByEventId(eventId);
-        System.out.println("Delete event" +eventId);
+        System.out.println("Delete event: " + eventId);
+        List<Event> events = user.getEvents();
+        events.removeIf(n -> (n.getEventId() == eventId));
+        userService.save(user);
         eventService.delete(event);
         return "redirect:/calendar";
     }

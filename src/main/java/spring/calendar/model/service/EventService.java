@@ -36,17 +36,21 @@ public class EventService {
         eventDao.delete(event);
     }
 
-
     public Event createEvent(String eventName, String date, String labelString){
         LocalDate eventDate = LocalDate.parse(date);
-        Label label = labelDao.findLabelByLabelId(Integer.parseInt(labelString));
-        Event event = new Event(eventName, eventDate, label);
+        List<Label> labelList = parseLabelString(labelString);
+        Event event = new Event(eventName, eventDate, labelList);
         save(event);
         return event;
     }
-    private String validateEventForm(){
-
-        return "";
+    private List<Label> parseLabelString(String labelString){
+        List<Label> labelList = new ArrayList<>();
+        String[] labelStringArray = labelString.split(",");
+        for (int i = 0; i < labelStringArray.length; i++) {
+            Label label = labelDao.findLabelByLabelId(Integer.parseInt(labelStringArray[i]));
+            labelList.add(label);
+        }
+        return labelList;
     }
 
     public HashMap<String, ArrayList<Event>> getEventMap(User user){

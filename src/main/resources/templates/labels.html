@@ -1,11 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <title>Birthday Calendar</title>
     <meta charset="UTF-8">
-    <title>Labels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Labels</h1>
 
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        Calendar
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/calendar">Calendar</a>
+        <a class="p-2 text-dark" href="/labels">Labels</a>
+        <a class="p-2 text-dark" href="/accounts/logout/">Logout</a>
+    </nav>
+</div>
+
+<div class="bd-example-container-body">
+
+    <h5>Create new label</h5>
+    <form action="#" th:action="@{create_label}" method="post" name="create-label-form">
+
+        <table border="0">
+            <tr>
+                <th>Label name:</th>
+                <td><input type="text" name="label_name"></td>
+            </tr>
+        </table>
+        <button class="submitButton" type="submit">Submit</button>
+    </form>
+
+    <h3>Current labels:</h3>
+    <div th:each="label : ${labels}" th:text="${label.labelName}"></div>
+</div>
 </body>
 </html>

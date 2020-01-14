@@ -45,7 +45,7 @@ public class FillDbController {
         userDao.save(user1);
         userDao.save(user2);
         eventDao.save(event1);
-        loadTestEvents(user1);
+        //loadTestEvents(user1);
     }
 
     private ArrayList<Label> createLabels(){
