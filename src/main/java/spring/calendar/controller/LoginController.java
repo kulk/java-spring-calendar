@@ -26,7 +26,6 @@ public class LoginController {
     public String doLoginHandler(@RequestParam(name = "username") String email,
                                  @RequestParam String password,
                                  Model model){
-
         if(loginService.loginValid(email, password)){
             User user = loginService.getUserByEmail(email);
             model.addAttribute("user", user.getUserId());
@@ -35,7 +34,6 @@ public class LoginController {
             model.addAttribute("backend_error", "Email password combination not valid");
             return "login";
         }
-
 
     }
 
