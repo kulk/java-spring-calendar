@@ -1,6 +1,8 @@
 package spring.calendar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +32,10 @@ public class CalendarController {
     UserService userService;
 
     @GetMapping("calendar")
-    public String calendarHandler(@SessionAttribute("user") User user, Model model){
+    public String calendarHandler(/*@SessionAttribute("user") User user,*/ Model model){
+
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.findUserByEmail(userDetails.getUsername());
         HashMap<String, ArrayList<Event>> eventMap = eventService.getEventMap(user);
         List<Label> labels = user.getLabels();
         model.addAttribute("testEvents", eventMap);
