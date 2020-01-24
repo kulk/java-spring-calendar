@@ -26,16 +26,17 @@
 <div class="bd-example-container-body">
 
     <h5>Create new label</h5>
-    <form action="#" th:action="@{create_label}" method="post" name="create-label-form">
+    <form action="#" th:action="@{create_label}" method="post" name="create-label-form" th:object="${label}">
 
         <table border="0">
             <tr>
                 <th>Label name:</th>
-                <td><input type="text" name="label_name"></td>
+                <td><input type="text" name="labelName"></td>
             </tr>
         </table>
         <button class="submitButton" type="submit">Submit</button>
     </form>
+
 
     <h3>Current labels:</h3>
     <div th:each="label : ${labels}" th:text="${label.labelName}"></div>
