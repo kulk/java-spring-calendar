@@ -10,12 +10,8 @@ import spring.calendar.model.User;
 @SessionAttributes("user")
 public class LogoutController {
 
-
     @GetMapping("logout")
-    public String logoutHandler(@SessionAttribute(required=false, name="user") User user){
-        if(user == null){
-            return "login";
-        }
+    public String logoutHandler(){
         return "login";
     }
 }

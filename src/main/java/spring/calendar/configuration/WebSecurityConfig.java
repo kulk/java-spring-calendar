@@ -14,11 +14,12 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(final HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/login","/home").permitAll()
+                .antMatchers( "/login","/").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -27,7 +28,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/login")
-    /*invalidateHttpSession(true).logoutUrl("/logout")deleteCookies("remove")*/
                 .permitAll();
     }
 

@@ -22,21 +22,4 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("do_login")
-    public String doLoginHandler(@RequestParam(name = "username") String email,
-                                 @RequestParam String password,
-                                 Model model){
-        if(loginService.loginValid(email, password)){
-            User user = loginService.getUserByEmail(email);
-            model.addAttribute("user", user.getUserId());
-            return "redirect:/calendar";
-        } else {
-            model.addAttribute("backend_error", "Email password combination not valid");
-            return "login";
-        }
-
-    }
-
-
-
 }

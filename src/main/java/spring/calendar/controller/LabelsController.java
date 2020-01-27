@@ -24,8 +24,7 @@ public class LabelsController {
 
     @GetMapping("labels")
     public String labelsHandler(Model model){
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userService.findUserByEmail(userDetails.getUsername());
+        User user = userService.getUser();
         List<Label> labels =  user.getLabels();
         model.addAttribute("labels", labels);
         return "labels";
@@ -33,10 +32,7 @@ public class LabelsController {
 
     @PostMapping("create_label")
     public String createLabel(@ModelAttribute(name="label") Label label){
-
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userService.findUserByEmail(userDetails.getUsername());
-
+        User user = userService.getUser();
         user.addLabel(label);
         userService.save(user);
         return "redirect:/labels";
