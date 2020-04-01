@@ -36,7 +36,7 @@ public class TestDbController {
     }
 
     private void fillDb(){
-        User user1 = new User("roeland@gmail.com", "123");
+        User user1 = new User("test@gmail.com", "123");
         User user2 = new User("mike@gmail.com", "123");
         ArrayList<Label> labels = createLabels();
         user1.setLabels(labels);
@@ -60,6 +60,7 @@ public class TestDbController {
     }
 
     private void loadTestEvents(User user){
+        // Still in progress
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         try{
             Scanner input = new Scanner(new File("../spring-calendar/src/main/resources/static/testdata/testevents.csv"));
