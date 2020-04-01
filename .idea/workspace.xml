@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9fb70a-fa7f-4690-8af2-6527987e08ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/configuration/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spring/calendar/CalendarControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring/calendar/CalendarControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/configuration/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/configuration/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LabelsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LabelsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/LabelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/LabelService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +134,7 @@
       <workItem from="1585069540720" duration="24000" />
       <workItem from="1585069835879" duration="652000" />
       <workItem from="1585738281988" duration="5986000" />
-      <workItem from="1585767590218" duration="1438000" />
+      <workItem from="1585767590218" duration="1827000" />
     </task>
     <servers />
   </component>
@@ -201,38 +194,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585767395286" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1585769585827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585827" />
+    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1585769585826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
-    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1585769041573">
+    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585826" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1585769585827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769041573" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769585827" />
     <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1585767399991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
