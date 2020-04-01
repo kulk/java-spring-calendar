@@ -1,12 +1,11 @@
 package spring.calendar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.*;
 import spring.calendar.model.Label;
 import spring.calendar.model.User;
 import spring.calendar.model.service.LabelService;
@@ -24,17 +23,16 @@ public class LabelsController {
     UserService userService;
 
     @GetMapping("labels")
-    public String labelsHandler(@SessionAttribute("user") User user,
-                                Model model){
+    public String labelsHandler(Model model){
+        User user = userService.getUser();
         List<Label> labels =  user.getLabels();
         model.addAttribute("labels", labels);
         return "labels";
     }
 
     @PostMapping("create_label")
-    public String createLabel(@SessionAttribute("user") User user,
-                              @RequestParam(name="label_name") String labelName){
-        Label label = new Label(labelName);
+    public String createLabel(@ModelAttribute(name="label") Label label){
+        User user = userService.getUser();
         user.addLabel(label);
         userService.save(user);
         return "redirect:/labels";

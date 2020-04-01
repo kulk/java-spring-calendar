@@ -1,6 +1,8 @@
 package spring.calendar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +32,8 @@ public class CalendarController {
     UserService userService;
 
     @GetMapping("calendar")
-    public String calendarHandler(@SessionAttribute("user") User user, Model model){
+    public String calendarHandler( Model model){
+        User user = userService.getUser();
         HashMap<String, ArrayList<Event>> eventMap = eventService.getEventMap(user);
         List<Label> labels = user.getLabels();
         model.addAttribute("testEvents", eventMap);
@@ -39,10 +42,10 @@ public class CalendarController {
     }
 
     @PostMapping("create_event")
-    public String createEventHandler(@SessionAttribute("user") User user,
-                                     @RequestParam (name="event_name") String eventName,
+    public String createEventHandler(@RequestParam (name="event_name") String eventName,
                                      @RequestParam String date,
                                      @RequestParam String label){
+        User user = userService.getUser();
         Event event = eventService.createEvent(eventName, date, label);
         user.addEvent(event);
         userService.save(user);
@@ -50,9 +53,9 @@ public class CalendarController {
     }
 
     @GetMapping("delete_event")
-    public String deleteEventHandler(@SessionAttribute("user") User user,
-                                     @RequestParam (value = "id", required = false) int eventId){
+    public String deleteEventHandler(@RequestParam (value = "id", required = false) int eventId){
         // Remove event from User
+        User user = userService.getUser();
         Event event = eventService.findEventByEventId(eventId);
         List<Event> events = user.getEvents();
         events.removeIf(n -> (n.getEventId() == eventId));
