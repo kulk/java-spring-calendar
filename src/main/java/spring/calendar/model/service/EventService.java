@@ -18,10 +18,16 @@ import java.util.List;
 public class EventService {
 
     @Autowired
+    EventService eventService;
+
+    @Autowired
     private EventDao eventDao;
 
     @Autowired
     private LabelDao labelDao;
+
+    @Autowired
+    UserService userService;
 
     public void save(Event event){
         eventDao.save(event);
@@ -32,8 +38,20 @@ public class EventService {
 
     }
 
-    public void delete(Event event){
+    public void deleteEvent(int eventId){
+        User user = userService.getUser();
+        Event event = findEventByEventId(eventId);
+        List<Event> events = user.getEvents();
+        events.removeIf(n -> (n.getEventId() == eventId));
+        userService.save(user);
         eventDao.delete(event);
+    }
+
+    public void createNewEvent(String eventName, String date, String label){
+        User user = userService.getUser();
+        Event event = eventService.createEvent(eventName, date, label);
+        user.addEvent(event);
+        userService.save(user);
     }
 
     public Event createEvent(String eventName, String date, String labelString){

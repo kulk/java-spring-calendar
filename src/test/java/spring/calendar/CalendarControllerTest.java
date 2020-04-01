@@ -57,7 +57,7 @@ public class CalendarControllerTest {
     private void addUserToSecurityContext() {
         UserDetails user =
                 org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder()
-                        .username("roeland@gmail.com")
+                        .username("test@gmail.com")
                         .password("123")
                         .roles("USER")
                         .build();
