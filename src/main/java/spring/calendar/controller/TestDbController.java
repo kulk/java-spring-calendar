@@ -20,7 +20,7 @@ import java.util.Scanner;
 
 
 @Controller
-public class FillDbController {
+public class TestDbController {
 
     @Autowired
     private UserDao userDao;
@@ -29,7 +29,7 @@ public class FillDbController {
     @Autowired
     private LabelDao labelDao;
 
-    @GetMapping("fdb")
+    @GetMapping("create-test-db")
     public String fillDbLauncher(){
         fillDb();
         return "login";
