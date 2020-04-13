@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9fb70a-fa7f-4690-8af2-6527987e08ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/TestDbService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/EventDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/EventDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/LabelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/LabelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/Dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/TestDbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/TestDbController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/LabelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/LabelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/TestDbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/TestDbController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -141,7 +139,9 @@
       <workItem from="1585069540720" duration="24000" />
       <workItem from="1585069835879" duration="652000" />
       <workItem from="1585738281988" duration="5986000" />
-      <workItem from="1585767590218" duration="2396000" />
+      <workItem from="1585767590218" duration="3696000" />
+      <workItem from="1585859289679" duration="26000" />
+      <workItem from="1586677294212" duration="3135000" />
     </task>
     <servers />
   </component>
@@ -201,57 +201,77 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585767395286" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.0.bottom" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.0.center" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.0.left" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.0.right" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.1.bottom" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.1.center" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.1.left" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1585769940628">
+    <state width="1921" height="264" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="264" key="GridCell.Tab.1.right" timestamp="1586788401095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585769940628" />
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1585767399991">
+    <state width="1921" height="264" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586788401095" />
+    <state width="1921" height="355" key="GridCell.Tab.2.bottom" timestamp="1586787849608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585767399991" />
-    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1585767399991">
+    <state width="1921" height="355" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586787849608" />
+    <state width="1921" height="355" key="GridCell.Tab.2.center" timestamp="1586787849608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585767399991" />
-    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1585767399991">
+    <state width="1921" height="355" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586787849608" />
+    <state width="1921" height="355" key="GridCell.Tab.2.left" timestamp="1586787849608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585767399991" />
-    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1585767399991">
+    <state width="1921" height="355" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586787849608" />
+    <state width="1921" height="355" key="GridCell.Tab.2.right" timestamp="1586787849608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585767399991" />
+    <state width="1921" height="355" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586787849608" />
     <state x="592" y="65" width="736" height="909" key="find.popup" timestamp="1579614277767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="592" y="65" width="736" height="909" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579614277767" />
+    <state x="342" y="215" key="new project wizard" timestamp="1585859313746">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="215" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1585859313746" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

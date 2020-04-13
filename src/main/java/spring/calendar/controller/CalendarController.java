@@ -6,10 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import spring.calendar.model.Event;
 import spring.calendar.model.User;
 import spring.calendar.model.service.EventService;
 import spring.calendar.model.service.LabelService;
 import spring.calendar.model.service.UserService;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 @Controller

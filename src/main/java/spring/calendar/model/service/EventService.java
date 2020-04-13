@@ -72,7 +72,8 @@ public class EventService {
     }
 
     public HashMap<String, ArrayList<Event>> getEventMap(User user){
-        List<Event> events = user.getEvents();
+        //List<Event> events =  user.getEvents();
+        List<Event> events =  user.getEvents();
         HashMap<String, ArrayList<Event>> eventMap = new HashMap<>();
         for(Event event : events){
             eventMap = fillEventMap(eventMap, event);
