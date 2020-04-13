@@ -1,7 +1,7 @@
 package spring.calendar.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int eventId;
     private String name;
-    private LocalDate eventDate;
+    private LocalDateTime eventDate;
     @ManyToMany
     private List<Label> labels = new ArrayList<>();
 
@@ -20,19 +20,19 @@ public class Event {
         super();
     }
 
-    public Event(String name, LocalDate eventDate, Label label){
+    public Event(String name, LocalDateTime eventDate, Label label){
         this.name = name;
         this.eventDate = eventDate;
         this.labels.add(label);
     }
 
-    public Event(String name, LocalDate eventDate, List<Label> labels){
+    public Event(String name, LocalDateTime eventDate, List<Label> labels){
         this.name = name;
         this.eventDate = eventDate;
         this.labels = labels;
     }
 
-    public Event(String name, LocalDate eventDate){
+    public Event(String name, LocalDateTime eventDate){
         this.name = name;
         this.eventDate = eventDate;
     }
@@ -54,11 +54,11 @@ public class Event {
         this.name = name;
     }
 
-    public LocalDate getEventDate() {
+    public LocalDateTime getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(LocalDate date) {
+    public void setEventDate(LocalDateTime date) {
         this.eventDate = date;
     }
 

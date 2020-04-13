@@ -8,7 +8,7 @@ import spring.calendar.model.Event;
 import spring.calendar.model.Label;
 import spring.calendar.model.User;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,12 +55,14 @@ public class EventService {
     }
 
     public Event createEvent(String eventName, String date, String labelString){
-        LocalDate eventDate = LocalDate.parse(date);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime eventDate = LocalDateTime.parse(date + " 00:00", formatter);
         List<Label> labelList = parseLabelString(labelString);
         Event event = new Event(eventName, eventDate, labelList);
         save(event);
         return event;
     }
+
     private List<Label> parseLabelString(String labelString){
         List<Label> labelList = new ArrayList<>();
         String[] labelStringArray = labelString.split(",");
@@ -95,7 +97,7 @@ public class EventService {
     }
 
     private String extractKey(Event event){
-        LocalDate date = event.getEventDate();
+        LocalDateTime date = event.getEventDate();
         String stringDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         return String.valueOf(stringDate.charAt(3)) + stringDate.charAt(4);
     }

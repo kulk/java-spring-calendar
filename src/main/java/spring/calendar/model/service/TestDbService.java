@@ -11,7 +11,7 @@ import spring.calendar.model.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +35,7 @@ public class TestDbService {
         User user2 = new User("mike@gmail.com", "123");
         ArrayList<Label> labels = createLabels();
         user1.setLabels(labels);
-        Event event1 = new Event("Mike's birthday", LocalDate.now(), labels.get(1));
+        Event event1 = new Event("Mike's birthday", LocalDateTime.now(), labels.get(1));
         user1.addEvent(event1);
         userDao.save(user1);
         userDao.save(user2);
@@ -69,7 +69,7 @@ public class TestDbService {
         while (input.hasNextLine()) {
             String row = input.nextLine();
             String[] rowArray = row.split(",");
-            LocalDate date = LocalDate.parse(rowArray[0], formatter);
+            LocalDateTime date = LocalDateTime.parse(rowArray[0], formatter);
             Event event = new Event(rowArray[1], date);
             eventDao.save(event);
             user.addEvent(event);
