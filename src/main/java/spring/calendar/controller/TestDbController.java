@@ -15,7 +15,7 @@ public class TestDbController {
     @GetMapping("create-test-db")
     public String fillDbLauncher(){
         testDbService.fillDb();
-        return "redirect:/login";
+        return "redirect:/";
     }
 
 
