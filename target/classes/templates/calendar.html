@@ -42,12 +42,17 @@
                 <th>Label:</th>
                 <td>
                     <select name="label" id="id_label" multiple>
-                        <option th:each="label : ${labels}" th:text="${label.labelName}" th:value="${label.labelId}"/>
+                        <option th:each="label : ${labels}"
+                                th:text="${label.labelName}"
+                                th:value="${label.labelId}"
+                                th:selected="${label.is_default}"
+                        />
                     </select>
                 </td>
             </tr>
         </table>
         <button class="submitButton" type="submit">Submit</button>
+        <span th:text="${backend_error}" class="error"></span>
     </form>
     <br>
     <table id="calendar">

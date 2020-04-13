@@ -47,11 +47,17 @@ public class EventService {
         eventDao.delete(event);
     }
 
-    public void createNewEvent(String eventName, String date, String label){
-        User user = userService.getUser();
-        Event event = eventService.createEvent(eventName, date, label);
-        user.addEvent(event);
-        userService.save(user);
+    public String createNewEvent(String eventName, String date, String label){
+        if(eventName.equals("") || date.equals("") || label == null){
+            return "Not all fields have been entered";
+        }
+        else{
+            User user = userService.getUser();
+            Event event = eventService.createEvent(eventName, date, label);
+            user.addEvent(event);
+            userService.save(user);
+            return "";
+        }
     }
 
     public Event createEvent(String eventName, String date, String labelString){

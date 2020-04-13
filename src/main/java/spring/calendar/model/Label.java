@@ -10,9 +10,10 @@ public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int labelId;
+
     private String labelName;
+
     @ManyToMany(mappedBy = "labels",cascade = CascadeType.ALL)
-    //@ManyToMany(mappedBy = "labels")
     private List<Event> events = new ArrayList<>();
 
     public Label() {

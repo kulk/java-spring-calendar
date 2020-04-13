@@ -25,10 +25,12 @@ public class CalendarController {
     UserService userService;
 
     @GetMapping("calendar")
-    public String calendarHandler(Model model) {
+    public String calendarHandler(Model model,
+                                  @RequestParam (value = "error", required = false) String error) {
         User user = userService.getUser();
         model.addAttribute("events", eventService.getEventMap(user));
         model.addAttribute("labels", user.getLabels());
+        model.addAttribute("backend_error", error);
         return "calendar";
     }
 
@@ -36,8 +38,8 @@ public class CalendarController {
     public String createEventHandler(@RequestParam(name = "event_name") String eventName,
                                      @RequestParam String date,
                                      @RequestParam String label) {
-        eventService.createNewEvent(eventName, date, label);
-        return "redirect:/calendar";
+        String error = eventService.createNewEvent(eventName, date, label);
+        return (error.equals("")) ? "redirect:/calendar" : "redirect:/calendar?error=" + error;
     }
 
     @GetMapping("delete_event")
