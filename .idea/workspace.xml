@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9fb70a-fa7f-4690-8af2-6527987e08ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/TestDbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/CalendarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/TestDbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/controller/TestDbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/CalendarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/controller/TestDbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/controller/TestDbController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/calendar/model/service/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/TestDbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/calendar/model/service/TestDbService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +134,7 @@
       <workItem from="1585738281988" duration="5986000" />
       <workItem from="1585767590218" duration="3696000" />
       <workItem from="1585859289679" duration="26000" />
-      <workItem from="1586677294212" duration="3135000" />
+      <workItem from="1586677294212" duration="3908000" />
     </task>
     <servers />
   </component>
@@ -249,6 +242,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1921" height="355" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586787849608" />
+    <state x="676" y="216" width="567" height="604" key="RefactorJ.ExtractClass" timestamp="1586788784089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="676" y="216" width="567" height="604" key="RefactorJ.ExtractClass/0.0.1920.1040@0.0.1920.1040" timestamp="1586788784089" />
     <state x="592" y="65" width="736" height="909" key="find.popup" timestamp="1579614277767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

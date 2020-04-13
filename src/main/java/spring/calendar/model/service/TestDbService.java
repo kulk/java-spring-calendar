@@ -30,7 +30,7 @@ public class TestDbService {
     private LabelDao labelDao;
 
 
-    public void fillDb(){
+    public void fillDb() {
         User user1 = new User("test@gmail.com", "123");
         User user2 = new User("mike@gmail.com", "123");
         ArrayList<Label> labels = createLabels();
@@ -42,33 +42,38 @@ public class TestDbService {
         eventDao.save(event1);
     }
 
-    private ArrayList<Label> createLabels(){
+    private ArrayList<Label> createLabels() {
         ArrayList<Label> labels = new ArrayList<>();
         Collections.addAll(labels, new Label("Wedding"),
                 new Label("Birthday"),
                 new Label("Meeting"),
                 new Label("Reminder"));
-        for(Label label : labels){
+        for (Label label : labels) {
             labelDao.save(label);
         }
         return labels;
     }
 
-    private void loadTestEvents(User user){
+    private void loadTestEvents(User user) {
         // Still in progress
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        try{
+        try {
             Scanner input = new Scanner(new File("../spring-calendar/src/main/resources/static/testdata/testevents.csv"));
-            while(input.hasNextLine()){
-                String row = input.nextLine();
-                String[] rowArray = row.split(",");
-                LocalDate date = LocalDate.parse(rowArray[0], formatter);
-                Event event = new Event(rowArray[1], date);
-                eventDao.save(event);
-                user.addEvent(event);
-            }
-        } catch (FileNotFoundException notFound){
+            storeEvents(input, user);
+        } catch (FileNotFoundException notFound) {
             System.out.println("File not found");
         }
     }
+
+    private void storeEvents(Scanner input, User user) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        while (input.hasNextLine()) {
+            String row = input.nextLine();
+            String[] rowArray = row.split(",");
+            LocalDate date = LocalDate.parse(rowArray[0], formatter);
+            Event event = new Event(rowArray[1], date);
+            eventDao.save(event);
+            user.addEvent(event);
+        }
+    }
+
 }
