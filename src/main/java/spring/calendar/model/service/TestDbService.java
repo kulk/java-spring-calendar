@@ -55,7 +55,7 @@ public class TestDbService {
     }
 
     private void loadTestEvents(User user) {
-        // Still in progress
+        // In progress
         try {
             Scanner input = new Scanner(new File("../spring-calendar/src/main/resources/static/testdata/testevents.csv"));
             storeEvents(input, user);

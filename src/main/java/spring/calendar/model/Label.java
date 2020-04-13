@@ -10,7 +10,6 @@ public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int labelId;
-
     private String labelName;
 
     @ManyToMany(mappedBy = "labels",cascade = CascadeType.ALL)
@@ -39,4 +38,5 @@ public class Label {
     public void setLabelName(String labelName) {
         this.labelName = labelName;
     }
+
 }
