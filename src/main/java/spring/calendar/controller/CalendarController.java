@@ -27,7 +27,7 @@ public class CalendarController {
     @GetMapping("calendar")
     public String calendarHandler(Model model) {
         User user = userService.getUser();
-        model.addAttribute("testEvents", eventService.getEventMap(user));
+        model.addAttribute("events", eventService.getEventMap(user));
         model.addAttribute("labels", user.getLabels());
         return "calendar";
     }
